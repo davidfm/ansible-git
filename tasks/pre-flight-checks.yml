@@ -1,0 +1,16 @@
+---
+
+- fail:
+    msg: "You must specify your Linux user"
+  when: linux_user_name is not defined or
+        linux_user_name == ''
+
+- fail:
+    msg: "You must set your full name"
+  when: git_user_name is not defined or
+        git_user_name == ''
+
+- fail:
+    msg: "You must set your email"
+  when: git_user_email is not defined or
+        git_user_email == ''
